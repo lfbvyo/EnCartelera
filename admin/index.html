@@ -7,73 +7,20 @@
   </head>
   <body>
     <header>
-      <!-- Dropdown Structure -->
-      <ul id="dropdown-movies" class="dropdown-content">
-        <li><a href="#movie/add">Agregar</a></li>
-        <li><a href="#movie/edit">Editar</a></li>
-        <li><a href="#movie/delete">Eliminar</a></li>
-      </ul>
-      <!-- Dropdown Structure -->
-      <ul id="dropdown-gendres" class="dropdown-content">
-        <li><a href="#gendre/add">Agregar</a></li>
-        <li><a href="#gendre/edit">Editar</a></li>
-        <li><a href="#gendre/delete">Eliminar</a></li>
-      </ul>
-      <!-- Dropdown Structure -->
-      <ul id="dropdown-schedules" class="dropdown-content">
-        <li><a href="#schedule/add">Agregar</a></li>
-        <li><a href="#schedule/edit">Editar</a></li>
-        <li><a href="#schedule/delete">Eliminar</a></li>
-      </ul>
-      <!-- Dropdown Structure -->
-      <ul id="dropdown-theaters" class="dropdown-content">
-        <li><a href="#theaters/add">Agregar</a></li>
-        <li><a href="#theaters/edit">Editar</a></li>
-        <li><a href="#theaters/delete">Eliminar</a></li>
-      </ul>
-      <!-- Dropdown Structure -->
-      <ul id="dropdown-ubications" class="dropdown-content">
-        <li><a href="#theaters/add">Agregar</a></li>
-        <li><a href="#theaters/edit">Editar</a></li>
-        <li><a href="#theaters/delete">Eliminar</a></li>
-      </ul>
       <nav>
         <div class="nav-fixed">
           <a href="#!" ng-controller="currentTitleController" class="brand-logo right">{{title}}</a>
           <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
           <ul id="nav-web" class="left hide-on-med-and-down">
-            <li>
-              <a class="dropdown-button" href="#!" data-activates="dropdown-movies">
-                Películas
-                <i class="mdi-navigation-arrow-drop-down right"></i>
-              </a>
-            </li> 
-            <li>
-              <a class="dropdown-button" href="#!" data-activates="dropdown-gendres">
-                Géneros
-                <i class="mdi-navigation-arrow-drop-down right"></i>
-              </a>
-            </li> 
-            <li>
-              <a class="dropdown-button" href="#!" data-activates="dropdown-schedules">
-                Tandas
-                <i class="mdi-navigation-arrow-drop-down right"></i>
-              </a>
-            </li> 
-            <li>
-              <a class="dropdown-button" href="#!" data-activates="dropdown-theaters">
-                Cines, Teatros
-                <i class="mdi-navigation-arrow-drop-down right"></i>
-              </a>
-            </li> 
-            <li>
-              <a class="dropdown-button" href="#!" data-activates="dropdown-ubications">
-                Ubicaciones
-                <i class="mdi-navigation-arrow-drop-down right"></i>
-              </a>
-            </li> 
+            <li><a class="active " href="#peliculas">Películas</a></li>
+            <li><a href="#gendres">Géneros</a></li>
+            <li><a href="#schedules">Tandas</a></li>
+            <li class="divider"></li>
+            <li><a href="#theaters">Cines, Teatros</a></li>
+            <li><a href="#ubications">Ubicaciones</a></li>
           </ul>
           <ul class="side-nav" id="mobile-menu">
+            <li><a href="#!" ng-controller="currentTitleController" class="brand-logo center">{{title}}</a></li>
             <li><a class="active " href="#peliculas">Películas</a></li>
             <li><a href="#gendres">Géneros</a></li>
             <li><a href="#schedules">Tandas</a></li>

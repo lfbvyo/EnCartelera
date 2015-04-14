@@ -1,15 +1,18 @@
 (function(){
-    startStyles();
+  startGlobalStyles();
 
-
-  var currentTitleController = function($scope){
+  var uiController = function($scope){
     $scope.title = "Peliculas";
   };
-  currentTitleController.$inject = ['$scope'];
+
+  uiController.$inject = ['$scope'];
+
   angular.module('adminEnCarteleraApp', [])
-    .controller('currentTitleController', currentTitleController);
+    .controller('uiController', uiController);
+
     // Starts the styles
-  function startStyles(){
+  function startGlobalStyles(){
     $(".button-collapse").sideNav();
   }
+  
 }()); 
