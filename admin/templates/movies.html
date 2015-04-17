@@ -1,4 +1,29 @@
-<h1>Películas En Cartelera </h1>
-<div ng-controller="moviesController" >
-    Hola mundo {{hi}}
+
+<div class="row" >
+    <div ng-repeat="movie in movies" class="col s12 m6 l4">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{movie.img}}">
+          <span class="card-title truncate">{{movie.name}}</span>
+        </div>
+        <div class="card-content">
+          <p>{{movie.description}}</p>
+        </div>
+        <div class="card-action">
+          <a href="#">Editar</a>
+          <a href='#'>Eliminar</a>
+        </div>
+      </div>
+    </div>
 </div>
+<footer class="page-footer">
+<div class="container white-text valign-wrapper">
+    Status: {{statusBar}}
+</div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2014 Copyright Páginas Web Costa Rica
+    <a class="grey-text text-lighten-4 right" href="http://paginasweb.cr">PaginasWeb.cr</a>
+    </div>
+  </div>
+</footer>
