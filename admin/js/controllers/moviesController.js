@@ -8,9 +8,9 @@
             console.debug($scope.movies);
             $scope.$apply();
         }
+        $scope.title = "EnCartelera";
         $scope.statusBar = moviesService.status;
         moviesService.getMovies(setMovies); 
-        
         
         //moviesService.addMovie({ name : "Los Vengadores 2", description:"La Película de Marvel más esperada del 2015", youtube:"tmeOjFno6Do", img:"" }); 
     };
