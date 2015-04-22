@@ -1,11 +1,15 @@
 (function(){
-  startGlobalStyles();
+    startGlobalStyles();
 
-  var app = angular.module('adminEnCarteleraApp', ['ngRoute']);
+    var app = angular.module('adminEnCarteleraApp', ['ngRoute']);
 
-  app.config(function($routeProvider) {
+    app.config(function($routeProvider) {
         $routeProvider
             .when('/', {
+                controller: 'moviesController',
+                templateUrl: 'templates/movies.html'
+            })
+            .when('/movies/', {
                 controller: 'moviesController',
                 templateUrl: 'templates/movies.html'
             })
@@ -21,12 +25,18 @@
                 controller: 'movieEditController',
                 templateUrl: 'templates/movieEdit.html'
             })
+            .when('/genres/', {
+                controller: 'genresController',
+                templateUrl: 'templates/genres.html'
+            })
+            .when('/genre/new/', {
+                controller: 'genreNewController',
+                templateUrl: 'templates/genreNew.html'
+            })
             .otherwise( { redirectTo: '/' } );
     });
-
     // Starts the styles
-  function startGlobalStyles(){
-    $(".button-collapse").sideNav();
-  }
-
+    function startGlobalStyles(){
+        $(".button-collapse").sideNav();
+    }
 }()); 

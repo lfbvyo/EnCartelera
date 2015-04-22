@@ -5,7 +5,6 @@
         $scope.movie = {};
         $scope.movie.movie = true;
 
-        $scope.statusBar = moviesService.status;
         $scope.movie.dimension = 2;
         $scope.movie.rating = "TP";
         $scope.movie.genres = [];
@@ -23,8 +22,6 @@
                 $('select').material_select();
             });
         }
-
-        //moviesService.addMovie({ name : "Los Vengadores 2", description:"La Película de Marvel más esperada del 2015", youtube:"tmeOjFno6Do", img:"" }); 
     };
 
     movieNewController.$inject = ['$scope', '$log', 'moviesService'];

@@ -59,14 +59,14 @@
       </div>
     </div>
     <div class="row">
-      <a ng-click="saveMovie(movie)"  class="waves-effect waves-light btn" ><i class="mdi-content-save"></i> Guardar</a>{{count}}
+      <a ng-click="saveMovie(movie)"  class="waves-effect waves-light btn" ><i class="mdi-content-save"></i> Guardar</a>
     </div>
   </form>
   <!-- Example -->
     <div class="col s12 m4 l4">
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" ng-src="{{ movie.img || 'img/movie-banner.jpg'  }}" >
+          <img class="activator" ng-src="http://api.encarteleracr.com/image-cache/?src={{ movie.img || 'http://admin.encarteleracr.com/img/movie-banner.jpg'  }}&w=390&h=265&zc=1&q=75" >
         </div>
         <div class="card-content">
           <span class="card-title activator grey-text text-darken-4">{{movie.name}} <i class="mdi-navigation-more-vert right"></i></span>
