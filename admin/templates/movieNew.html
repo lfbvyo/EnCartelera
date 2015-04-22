@@ -1,37 +1,80 @@
-<div class="row">
-  <form class="col s12">
+<div class="row" >
+  <form class="col s12 m12 l8">
     <div class="row">
-      <div class="input-field col s6">
+      <div class="input-field col s12 m6 l6">
         <input ng-model="name" class="validate" id="name" type="text" length="30">
-        <label for="name">Nombre</label>
+        <label for="name"><i class="mdi-content-text-format"></i> Nombre</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m12 l12">
+        <textarea ng-model="description" id="description" class="validate materialize-textarea" length="120"></textarea>
+        <label for="description"><i class="mdi-editor-format-color-text"></i> Sinopsis</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m6 l6">
+        <input ng-model="img" class="validate" id="img" type="text" length="30">
+        <label for="img"> <i class="mdi-image-image"></i> Imagen URL</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m8 l6">
+        <input ng-model="youtube" class="validate" id="youtube" type="text" length="15">
+        <label for="youtube"><i class="mdi-av-videocam"></i> ID YouTube <a href="https://www.youtube.com/watch?v={{youtube}}" target="_blank">Probar</a></label>
+        
+      </div>
+    </div>
+    <div class="row">
+      <div class="switch col s12 m6 l6">
+        <label>
+          <i class="mdi-av-movie"></i>Obra de teatro
+          <input ng-model="movie" type="checkbox">
+          <span class="lever"></span>
+          <i class="mdi-maps-local-movies"></i>Película
+        </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m6 l6" animate-hide ng-show="movie">
+        <select ng-model="dimension">
+          <option selected value="2">Normal</option>
+          <option value="3">3D</option>
+          <option value="99">Más de 3</option>
+        </select>
+        <label><i class="mdi-action-3d-rotation"></i>Dimensiones</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <textarea ng-model="description" id="description" class="materialize-textarea" length="120"></textarea>
-        <label for="description">Sinopsis</label>
+        <select ng-model="rating">
+          <option selected value="TP">TP (general o Todo Público)</option>
+          <option value="STP">STP (todo público, niños acompañados de un adulto)</option>
+          <option value="12+">12+ (mayores de 12 años)</option>
+          <option value="15+">15+ (mayores de 15 años)</option>
+          <option value="18+">18+ (mayores de 18 años)</option>
+          <option value="18+X">18+X (Pornografía)</option>
+        </select>
+        <label><i class="mdi-action-visibility"></i>Clasificación</label>
       </div>
     </div>
     <div class="row">
-      <div class="input-field col s6">
-        <input ng-model="img" class="validate" id="name" type="text" length="30">
-        <label for="name">Imagen URL</label>
-      </div>
+      <a ng-click="saveMovie()"  class="waves-effect waves-light btn" ><i class="mdi-content-save"></i> Guardar</a>{{count}}
     </div>
   </form>
   <!-- Example -->
     <div class="col s12 m12 l4">
       <div class="card">
-        <div class="card-image">
-          <img src="{{img}}">
-          <span class="card-title truncate">{{name}}</span>
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator" ng-src="{{ img || 'img/movie-banner.jpg'  }}" >
         </div>
         <div class="card-content">
-          <p>{{description}}</p>
+          <span class="card-title activator grey-text text-darken-4">{{name}} <i class="mdi-navigation-more-vert right"></i></span>
+          <p><a href="#">Ver trailer y tandas</a></p>
         </div>
-        <div class="card-action">
-          <a href="#/">Editar</a>
-          <a href='#/'>Eliminar</a>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">{{name}} <i class="mdi-navigation-close right"></i></span>
+          <p>{{description}}</p>
         </div>
       </div>
     </div>
