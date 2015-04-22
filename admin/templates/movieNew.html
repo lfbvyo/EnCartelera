@@ -1,53 +1,53 @@
 <div class="row" >
-  <form class="col s12 m12 l8">
+  <form class="col s12 m8 l8" >
     <div class="row">
       <div class="input-field col s12 m6 l6">
-        <input ng-model="name" class="validate" id="name" type="text" length="30">
+        <input ng-model="movie.name" class="validate" id="name" type="text" length="30">
         <label for="name"><i class="mdi-content-text-format"></i> Nombre</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12 m12 l12">
-        <textarea ng-model="description" id="description" class="validate materialize-textarea" length="120"></textarea>
+        <textarea ng-model="movie.description" id="description" class="validate materialize-textarea" length="120"></textarea>
         <label for="description"><i class="mdi-editor-format-color-text"></i> Sinopsis</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12 m6 l6">
-        <input ng-model="img" class="validate" id="img" type="text" length="30">
+        <input ng-model="movie.img" class="validate" id="img" type="text" length="30">
         <label for="img"> <i class="mdi-image-image"></i> Imagen URL</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12 m8 l6">
-        <input ng-model="youtube" class="validate" id="youtube" type="text" length="15">
+        <input ng-model="movie.youtube" class="validate" id="youtube" type="text" length="15">
         <label for="youtube"><i class="mdi-av-videocam"></i> ID YouTube <a href="https://www.youtube.com/watch?v={{youtube}}" target="_blank">Probar</a></label>
         
       </div>
     </div>
     <div class="row">
-      <div class="switch col s12 m6 l6">
+      <div class="switch col s12 m12 l12">
         <label>
           <i class="mdi-av-movie"></i>Obra de teatro
-          <input ng-model="movie" type="checkbox">
+          <input ng-model="movie.movie" type="checkbox">
           <span class="lever"></span>
           <i class="mdi-maps-local-movies"></i>Película
         </label>
       </div>
     </div>
     <div class="row">
-      <div class="input-field col s12 m6 l6" animate-hide ng-show="movie">
-        <select ng-model="dimension">
+      <div class="input-field col s12 m12 l12" animate-hide ng-show="movie">
+        <select id="select-dimension"  ng-click="select('dimension')">
           <option selected value="2">Normal</option>
           <option value="3">3D</option>
           <option value="99">Más de 3</option>
-        </select>
+        </select> {{movie.dimension}}
         <label><i class="mdi-action-3d-rotation"></i>Dimensiones</label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-        <select ng-model="rating">
+          <select id="select-rating"  ng-click="select('rating')">
           <option selected value="TP">TP (general o Todo Público)</option>
           <option value="STP">STP (todo público, niños acompañados de un adulto)</option>
           <option value="12+">12+ (mayores de 12 años)</option>
@@ -59,22 +59,22 @@
       </div>
     </div>
     <div class="row">
-      <a ng-click="saveMovie()"  class="waves-effect waves-light btn" ><i class="mdi-content-save"></i> Guardar</a>{{count}}
+      <a ng-click="saveMovie(movie)"  class="waves-effect waves-light btn" ><i class="mdi-content-save"></i> Guardar</a>{{count}}
     </div>
   </form>
   <!-- Example -->
-    <div class="col s12 m12 l4">
+    <div class="col s12 m4 l4">
       <div class="card">
         <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" ng-src="{{ img || 'img/movie-banner.jpg'  }}" >
+          <img class="activator" ng-src="{{ movie.img || 'img/movie-banner.jpg'  }}" >
         </div>
         <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">{{name}} <i class="mdi-navigation-more-vert right"></i></span>
+          <span class="card-title activator grey-text text-darken-4">{{movie.name}} <i class="mdi-navigation-more-vert right"></i></span>
           <p><a href="#">Ver trailer y tandas</a></p>
         </div>
         <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">{{name}} <i class="mdi-navigation-close right"></i></span>
-          <p>{{description}}</p>
+          <span class="card-title grey-text text-darken-4">{{movie.name}} <i class="mdi-navigation-close right"></i></span>
+          <p>{{movie.description}}</p>
         </div>
       </div>
     </div>

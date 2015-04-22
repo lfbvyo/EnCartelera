@@ -1,7 +1,6 @@
 (function() {
     var moviesService = function() {
         this.movies = [];
-        this.status = "waiting";
         initParse();
 
         this.getMovies = function(callBack) {
@@ -35,11 +34,11 @@
             status = "saving";
             movies.save(
                 movie ,
-                { success: function(gameScore) {
-                    status = "saved";
+                { success: function(data) {
+                        console.debug("Saved"+ data.message);
                 },
                 error: function(object, error) {
-                    status = "Error saving movie";
+                    console.debug(error.message);
                 }
             });
         }

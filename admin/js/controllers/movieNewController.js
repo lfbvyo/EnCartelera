@@ -2,15 +2,22 @@
     var movieNewController = function ($scope, $log, moviesService) {
         //start materialize styles
         startStyles();
-
-        $scope.movie = true;
+        $scope.movie = {};
+        $scope.movie.movie = true;
 
         $scope.statusBar = moviesService.status;
+        $scope.movie.dimension = 2;
+        $scope.movie.rating = "TP";
+        $scope.movie.genres = [];
         
-        $scope.saveMovie = function () {
-            console.debug($scope.master);
+        
+        $scope.saveMovie = function (movie) {
+            moviesService.addMovie(movie);
         };
-
+        // when selects in page 
+        $scope.select = function(scopeVal) {
+            $scope.movie[scopeVal] = $("#select-"+scopeVal+" option:selected").val();
+        };
         function startStyles() {
             $(document).ready(function() {
                 $('select').material_select();

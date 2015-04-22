@@ -5,7 +5,6 @@
         var setMovies = function (status, movies) {
             $scope.movies = movies;
             $scope.statusBar = status;
-            console.debug($scope.movies);
             $scope.$apply();
         }
         $scope.title = "EnCartelera";
