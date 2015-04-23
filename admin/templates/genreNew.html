@@ -1,7 +1,7 @@
 <div class="row" >
   <form class="col s12 m8 l8" >
     <div class="row">
-      <div class="input-field col s12 m6 l6">
+      <div class="input-field col s12 m12 l12">
         <input ng-model="genre.name" class="validate" id="name" type="text" length="30">
         <label for="name"><i class="mdi-content-text-format"></i> Nombre</label>
       </div>
@@ -16,14 +16,14 @@
       <a ng-click="saveGenre(genre)"  class="waves-effect waves-light btn" ><i class="mdi-content-save"></i> Guardar</a>
     </div>
   </form>
-  <ul class="collection row">
-    <li class="collection-item avatar" >
-      <i class="mdi-av-movie circle teal"></i>
-      <span class="title">{{genre.name}}</span>
-      <p>
-        {{genre.description}}
-      </p>
-      
-    </li>
-</ul>
 </div>
+
+<ul class="collection row">
+  <li class="collection-item avatar" >
+    <i class="mdi-av-movie circle teal"></i>
+    <span class="title">{{genre.name}}</span>
+    <p>
+      {{genre.description}}
+    </p>
+  </li>
+</ul>
