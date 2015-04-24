@@ -37,6 +37,18 @@
                 controller: 'genreEditController',
                 templateUrl: 'templates/genreEditNew.html'
             })
+            .when('/theaters/', {
+                controller: 'theatersController',
+                templateUrl: 'templates/theaters.html'
+            })
+            .when('/theater/new/', {
+                controller: 'theaterNewController',
+                templateUrl: 'templates/theaterEditNew.html'
+            })
+            .when('/theater/edit/:theaterId/', {
+                controller: 'theaterEditController',
+                templateUrl: 'templates/theaterEditNew.html'
+            })
             .otherwise( { redirectTo: '/' } );
     });
     // Starts the styles

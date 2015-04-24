@@ -2,7 +2,7 @@
     <li class="collection-item avatar" ng-repeat="genre in genres">
       <a href="#/genre/edit/{{genre.objectId}}"><i class="mdi-image-edit circle teal"></i></a>
       <span class="title">{{genre.name}}</span>
-      <p>
+      <p >
         {{genre.description}}
       </p>
       <a ng-click="removeGenre(genre.objectId)" class="secondary-content" title="Borrar género"><i class="mdi-action-delete"></i></a>

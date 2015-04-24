@@ -5,7 +5,6 @@
 
         var setCurrentGenre = function(status, genre) {
             if (status){
-                console.debug(genre);
                 $scope.genre = genre;
                 $scope.$apply();
             } else {

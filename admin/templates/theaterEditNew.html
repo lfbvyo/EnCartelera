@@ -1,0 +1,54 @@
+<div class="row" >
+  <form class="col s12 m8 l8" >
+    <div class="row">
+      <div class="input-field col s12 m12 l12">
+        <input ng-model="theater.name" class="validate ng-touched" id="name" type="text" length="30">
+        <label for="name" class="active"><i class="mdi-content-text-format"></i> Nombre</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m12 l12">
+        <textarea ng-model="theater.description" id="description" class=" materialize-textarea" length="120"></textarea>
+        <label for="description" class="active"><i class="mdi-editor-format-color-text"></i> Descripción</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m12 l12">
+        <input ng-model="theater.url" class="validate ng-touched" id="url" type="text" length="30">
+        <label for="url" class="active"><i class="mdi-content-link"></i> URL <a href="{{theater.url}}" target="_blank">Probar</a></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12 m12 l12">
+        <input ng-model="theater.facebook" class="validate ng-touched" id="facebook" type="text" length="30">
+        <label for="facebook" class="active"><i class="mdi-social-people"></i> Facebook <a href="{{theater.facebook}}" target="_blank">Probar</a></label>
+      </div>
+    <div class="row">
+      <div class="input-field col s12 m12 l12">
+        <input ng-model="theater.img" class="validate ng-touched" id="url" type="text" length="30">
+        <label for="url" class="active"><i class="mdi-content-link"></i> Logo / Imagen </label>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <a id="save-new-theater" ng-click="saveTheater(theater)"  class="waves-effect waves-light btn" ><i class="mdi-content-save"></i> Guardar</a>
+    </div>
+  </form>
+</div>
+<div class="row">
+  <div class="col s12 m6" >
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">{{theater.name}}</span>
+        <p>
+          <img ng-src="http://api.encarteleracr.com/image-cache/?src={{ theater.img || 'http://admin.encarteleracr.com/img/theater-logo.png'  }}&w=80&h=80&zc=1&q=75" alt="{{theater.name}}" title="{{theater.name}}">
+          {{theater.description}}
+          </p>
+      </div>
+      <div class="card-action">
+        <a href="#"><i class="mdi-av-movie"></i>Tandas</a>
+        <a ><i class="mdi-maps-my-location"></i>Ubicaciones</a>
+      </div>
+    </div>
+  </div>
+</div>
