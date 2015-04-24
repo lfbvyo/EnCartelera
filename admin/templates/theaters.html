@@ -3,7 +3,10 @@
     <div class="card blue-grey darken-1">
       <div class="card-content white-text">
         <span class="card-title">{{theater.name}}</span>
-        <p>{{theater.description}}</p>
+        <p class="theater-description">
+        <img class="left img-in-text" ng-src="http://api.encarteleracr.com/image-cache/?src={{ theater.img || 'http://admin.encarteleracr.com/img/theater-logo.png'  }}&w=120&h=120&zc=1&q=95" alt="{{theater.name}}" title="{{theater.name}}">
+          {{theater.description}}
+          </p>
       </div>
       <div class="card-action">
         <a href="#/theater/edit/{{theater.objectId}}"><i class="mdi-image-edit"></i>Editar</a>

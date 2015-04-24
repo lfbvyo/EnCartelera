@@ -40,8 +40,8 @@
     <div class="card blue-grey darken-1">
       <div class="card-content white-text">
         <span class="card-title">{{theater.name}}</span>
-        <p>
-          <img ng-src="http://api.encarteleracr.com/image-cache/?src={{ theater.img || 'http://admin.encarteleracr.com/img/theater-logo.png'  }}&w=80&h=80&zc=1&q=75" alt="{{theater.name}}" title="{{theater.name}}">
+        <p class="theater-description">
+        <img class="left img-in-text"ng-src="http://api.encarteleracr.com/image-cache/?src={{ theater.img || 'http://admin.encarteleracr.com/img/theater-logo.png'  }}&w=120&h=120&zc=1&q=95" alt="{{theater.name}}" title="{{theater.name}}">
           {{theater.description}}
           </p>
       </div>
