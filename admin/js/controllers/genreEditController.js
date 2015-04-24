@@ -1,6 +1,10 @@
 (function() {
-    var genreNewController = function ($scope, genresService) {
+    var genreEditController = function ($scope, $routeParams, genresService) {
+        var genreId = $routeParams.genreId;
         $scope.genre = {};
+
+        
+
         // Saves a genre through the genresService 
         $scope.saveGenre = function (genre) {
             // Shows feedback when after aving
@@ -33,8 +37,8 @@
         }
     };
 
-    genreNewController.$inject = ['$scope', 'genresService'];
+    genreEditController.$inject = ['$scope', '$routeParams', 'genresService'];
 
     angular.module('adminEnCarteleraApp')
-      .controller('genreNewController', genreNewController);
+      .controller('genreEditController', genreEditController);
 }());

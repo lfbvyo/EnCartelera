@@ -21,7 +21,7 @@
                 controller: 'movieController',
                 templateUrl: 'templates/movie.html'
             })
-            .when('/movie/edit/:movieID', {
+            .when('/movie/edit/:movieID/', {
                 controller: 'movieEditController',
                 templateUrl: 'templates/movieEdit.html'
             })
@@ -31,12 +31,18 @@
             })
             .when('/genre/new/', {
                 controller: 'genreNewController',
-                templateUrl: 'templates/genreNew.html'
+                templateUrl: 'templates/genreEditNew.html'
+            })
+            .when('/genre/edit/:genreId/', {
+                controller: 'genreEditController',
+                templateUrl: 'templates/genreEditNew.html'
             })
             .otherwise( { redirectTo: '/' } );
     });
     // Starts the styles
     function startGlobalStyles(){
-        $(".button-collapse").sideNav();
+        $(".button-collapse").sideNav({
+            closeOnClick: true 
+        });
     }
 }()); 

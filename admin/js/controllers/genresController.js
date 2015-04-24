@@ -11,6 +11,7 @@
         genresService.getGenres(setGenres); 
         // Deletes a genre on data base and the local scope
         $scope.removeGenre = function (id) {
+            // Removes a genre from the local scope
             var removeGenreLocal = function (){
                 angular.forEach($scope.genres, function(genre, key) {
                     if (genre.objectId == id) {
@@ -19,6 +20,7 @@
                     }
                 });
             };
+            // Removes a genre from the Genres Service
             var removeCallBack = function (status, message) {
                 if(status) {
                     removeGenreLocal();

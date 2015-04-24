@@ -1,6 +1,6 @@
 <ul class="collection">
     <li class="collection-item avatar" ng-repeat="genre in genres">
-      <i class="mdi-av-movie circle teal"></i>
+      <a href="#/genre/edit/{{genre.objectId}}"><i class="mdi-image-edit circle teal"></i></a>
       <span class="title">{{genre.name}}</span>
       <p>
         {{genre.description}}

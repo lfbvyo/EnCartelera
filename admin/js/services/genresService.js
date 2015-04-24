@@ -1,6 +1,7 @@
 (function() {
     var genresService = function() {
         this.genres = [];
+        currentParseObject = null;
         initParse();
         // Get all genres available
         this.getGenres = function(callBack) {
@@ -9,25 +10,30 @@
             query.ascending("name");
             query.find({
                 success: function(genresObject) {
+                    genresJson = [];
                     angular.forEach(genresObject, function(genreObject, key) {
                         self.genres.push(genreObject.toJSON());
+                        genresJson.push(genreObject.toJSON());
                     });
-                    callBack(true, self.genres);
+                    callBack(true, genresJson);
                 },
                 error: function(error) {
-                    callBack(false, self.genres);
+                    callBack(false, null);
                     console.debug(error.message);
                 }
             });
         };
         // Gets an specific genre by the objectId
-        this.getGenre = function(genreId) {
-            for (var genreIndex=0,len=genres.length;i<len;genreIndex++) {
-               if (genres[genreIndex].id === parseInt(customerId)) {
-                   return genres[genreIndex];
-               }
-            }
-            return {};
+        this.getGenre = function(genreId, callBack) {
+            query.get(id, {
+                success: function(genre) {
+                    currentParseObject = genre;
+                    callBack(true, genre.toJSON() );
+                },
+                error: function(object, error) {
+                    callBack(false, error.message);
+                }
+            });
         };
         // Adds a new genre
         this.addGenre = function(genre, callBack){
