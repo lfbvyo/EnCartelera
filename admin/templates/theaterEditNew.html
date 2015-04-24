@@ -41,7 +41,7 @@
       <div class="card-content white-text">
         <span class="card-title">{{theater.name}}</span>
         <p class="theater-description">
-        <img class="left img-in-text" ng-src="http://api.encarteleracr.com/image-cache/?src={{ theater.img || 'http://graph.facebook.com/'+theater.facebook+'/picture'  }}&w=100&h=100&zc=1&q=95" alt="{{theater.name}}" title="{{theater.name}}">
+        <img class="left img-in-text" ng-src="http://api.encarteleracr.com/image-cache/?src={{ theater.img || 'http://graph.facebook.com/'+theater.facebook+'/picture?type=large'  }}&w=100&h=100&zc=1&q=95" alt="{{theater.name}}" title="{{theater.name}}">
           {{theater.description}}
           </p>
       </div>
