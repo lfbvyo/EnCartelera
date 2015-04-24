@@ -3,15 +3,22 @@
         var genreId = $routeParams.genreId;
         $scope.genre = {};
 
-        
+        var setCurrentGenre = function(status, genre) {
+            if (status){
+                console.debug(genre);
+                $scope.genre = genre;
+                $scope.$apply();
+            } else {
+                document.location = "#/genres/";
+            }
+        };
+        genresService.getGenre(genreId, setCurrentGenre);
 
         // Saves a genre through the genresService 
         $scope.saveGenre = function (genre) {
             // Shows feedback when after aving
             var saveCallBack = function(status, message){
                 if(status) {
-                    $scope.genre = {};
-                    $scope.$apply();
                     Materialize.toast('Género guardado.', 4000)
                 } else {
                     console.debug(message);

@@ -25,7 +25,8 @@
         };
         // Gets an specific genre by the objectId
         this.getGenre = function(genreId, callBack) {
-            query.get(id, {
+            var query = new Parse.Query(Genres);
+            query.get(genreId, {
                 success: function(genre) {
                     currentParseObject = genre;
                     callBack(true, genre.toJSON() );
@@ -35,6 +36,17 @@
                 }
             });
         };
+        this.saveGenre = function(genre) {
+            currentParseObject.save(
+                genre ,
+                { success: function(object) {
+                    callBack(true);
+                },
+                error: function(object, error) {
+                    callBack(false, error.message);
+                }
+            });
+        }
         // Adds a new genre
         this.addGenre = function(genre, callBack){
             var genres = new Genres();
